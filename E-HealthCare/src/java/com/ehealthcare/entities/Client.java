@@ -16,12 +16,16 @@ import javax.persistence.Id;
  * @author Thabang
  */
 @Entity
-public class Client implements Serializable {
+public class Client extends Personaldetails implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private Long idNum;
 
     public Client() {
+    }
+
+    public Client(Long idNum, String name, String surname, String email, String dob, String gender, String ethnicity) {
+        super(idNum, name, surname, email, dob, gender, ethnicity);
     }
 
     public Client(Long idNum) {
@@ -36,6 +40,5 @@ public class Client implements Serializable {
         this.idNum = idNum;
     }
     
-    
-
+  
 }

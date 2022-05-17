@@ -6,10 +6,13 @@
 package com.ehealthcare.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -23,6 +26,7 @@ public class Personaldetails implements Serializable {
     private String name;
     private String surname;
     private String email;
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Address address;
     private String dob;
     private String gender;
@@ -31,12 +35,11 @@ public class Personaldetails implements Serializable {
     public Personaldetails() {
     }
 
-    public Personaldetails(Long idNum, String name, String surname, String email, Address address, String dob, String gender, String ethnicity) {
+    public Personaldetails(Long idNum, String name, String surname, String email, String dob, String gender, String ethnicity) {
         this.idNum = idNum;
         this.name = name;
         this.surname = surname;
         this.email = email;
-        this.address = address;
         this.dob = dob;
         this.gender = gender;
         this.ethnicity = ethnicity;

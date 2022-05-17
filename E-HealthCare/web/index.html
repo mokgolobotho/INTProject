@@ -6,11 +6,34 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Home Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h2>Home Page</h2>
+        <form action="LoginServlet.do" method="POST">
+            <table>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username"/></td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" name="password"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="SIGNIN"/></td>
+                </tr>
+            </table>
+        </form>
+        
+            <button onclick="forgotPassword()">FORGOT PASSWORD</button>
+        
+      
+            <button onclick="register()">REGISTER</button>
+       
     </body>
 </html>

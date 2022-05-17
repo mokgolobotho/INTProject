@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CREATE USERNAME PAGE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h3>CREATE USERNAME</h3>
+        <form action="credentialServlet.do" method="POST" onSubmit=" checkPassword();">
+            <table>
+              
+                <tr>
+                    <td>Create Username: </td>
+                    <td>
+                        <input type="text" name="username" required="">
+                    </td> 
+                </tr>
+                <tr>
+                    <td>Create Password: </td>
+                    <td>
+                        <input type="text" name="password" id="pass" required="">
+                    </td> 
+                </tr>
+                <tr>
+                    <td>Confirm Password: </td>
+                    <td>
+                        <input type="text" name="re-password" id="re_pass" required="">
+                    </td> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Create Username" > 
+                    </td>
+                </tr>
+            </table>    
+        </form>
+    </body>
+</html>

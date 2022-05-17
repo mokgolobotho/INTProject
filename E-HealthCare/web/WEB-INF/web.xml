@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>DeletePatientServlet</servlet-name>
-        <servlet-class>DeletePatientServlet</servlet-class>
+        <servlet-name>credentialServlet</servlet-name>
+        <servlet-class>com.ehealthcare.web.credentialServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addAddressServlet</servlet-name>
+        <servlet-class>com.ehealthcare.web.addAddressServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DeletePatientServlet</servlet-name>
-        <url-pattern>/DeletePatientServlet.do</url-pattern>
+        <servlet-name>credentialServlet</servlet-name>
+        <url-pattern>/credentialServlet.do</url-pattern>
     </servlet-mapping>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/resourceNotFound.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>405</error-code>
-        <location>/methodNotSupported.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/internalServerError.jsp</location>
-    </error-page>
+    <servlet-mapping>
+        <servlet-name>addAddressServlet</servlet-name>
+        <url-pattern>/addAddressServlet.do</url-pattern>
+    </servlet-mapping>
 </web-app>

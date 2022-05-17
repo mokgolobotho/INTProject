@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registration Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript">
+            
+                    
+            function loginPage() {
+                window.location('index.html');
+            }
+            
+            
+        </script>
+    </head>
+    <body>
+        <h1>Registration Page</h1>
+        <br/>
+
+        <form method="POST" action="RegistrationServlet.do">
+            <h3>Personal information</h3>
+            <table>
+                <tr>
+                    <td>ID Number:</td>
+                    <td>
+                        <input type="text" name="id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name(s):</td>
+                    <td>
+                        <input type="text" name="name">
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <td>
+                        <input type="text" name="surname">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input type="text" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                        <input type="radio" name="gender" value="other"> Other
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ethnicity: </td>
+                    <td>
+                        <input type="text" name="ethnicity">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Birth Date:</td>
+                    <td>
+                        <input type="date" name="dob">
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <table id="extraTable" style="display: none">
+                <tr>
+                    <td>Specialization:</td>
+                    <td> <input type="text" name="specialization"> </td>
+                </tr>
+                <tr>
+                    <td>License number:</td>
+                    <td> <input type="text" name="licNum"> </td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <td>
+                        <label for="chkBx">I AM A DOCTOR</label>
+                    </td>
+                    <td>
+                         <input type="checkbox" name="Are you a doctor?" id="chkBx" onClick="doctorExtras()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <input type="submit" value="REGISTER"> </td>
+                </tr> 
+            </table>
+
+        </form>
+        <table>
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="loginPage()">LOGIN</button>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
