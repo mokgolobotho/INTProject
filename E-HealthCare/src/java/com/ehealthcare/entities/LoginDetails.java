@@ -18,9 +18,12 @@ import javax.persistence.Id;
 @Entity
 public class LoginDetails implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
+
     private String username;
     private String password;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     public LoginDetails() {
     }
@@ -44,6 +47,19 @@ public class LoginDetails implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginDetails{" + "username=" + username + ", password=" + password + '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     
 }

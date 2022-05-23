@@ -19,7 +19,7 @@ import javax.persistence.OneToOne;
  * @author Thabang
  */
 @Entity
-public class Personaldetails implements Serializable {
+public class ClientEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private Long idNum;
@@ -32,10 +32,10 @@ public class Personaldetails implements Serializable {
     private String gender;
     private String ethnicity;
 
-    public Personaldetails() {
+    public ClientEntity() {
     }
 
-    public Personaldetails(Long idNum, String name, String surname, String email, String dob, String gender, String ethnicity) {
+    public ClientEntity(Long idNum, String name, String surname, String email, Address address, String dob, String gender, String ethnicity) {
         this.idNum = idNum;
         this.name = name;
         this.surname = surname;
@@ -45,8 +45,6 @@ public class Personaldetails implements Serializable {
         this.gender = gender;
         this.ethnicity = ethnicity;
     }
-    
-    
 
     public Long getIdNum() {
         return idNum;
@@ -111,6 +109,6 @@ public class Personaldetails implements Serializable {
     public void setEthnicity(String ethnicity) {
         this.ethnicity = ethnicity;
     }
-
+    
     
 }

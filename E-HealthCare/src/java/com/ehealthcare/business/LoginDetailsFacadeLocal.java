@@ -24,5 +24,6 @@ public interface LoginDetailsFacadeLocal {
 
     LoginDetails findLogDetails(String username);
 
+    public List<LoginDetails> findAllDetails();
     
 }

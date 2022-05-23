@@ -8,7 +8,7 @@ package com.ehealthcare.web;
 import com.ehealthcare.business.LoginDetailsFacadeLocal;
 import com.ehealthcare.entities.LoginDetails;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,17 +33,34 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        HttpSession session = request.getSession(true);
-       String username = request.getParameter("username");
+       String username = request.getParameter("username").trim();
        String password = request.getParameter("password");
        String place="wrong_details.jsp";
+       boolean found= false;
+       List <LoginDetails> loginDetails =loginDetailsFacade.findAllDetails();
+       LoginDetails login = null;
        
-       LoginDetails login =loginDetailsFacade.findLogDetails(username);
+        System.out.println(loginDetails.get(0));
+        System.out.println(password);
+        
+       for(int i=0;i<loginDetails.size();i++)
+       {
+           if(loginDetails.get(i).getUsername().trim().equalsIgnoreCase(username))
+           {
+               found = true;
+               login = loginDetails.get(i);
+               break;
+           }
+           System.out.println(found);
+           
+       }
        
+       if(found==true){
        if(login.getPassword().trim().equalsIgnoreCase("password")){
            place="patient_menu.jsp";
        
        }
-       
+       }
        
        RequestDispatcher disp = request.getRequestDispatcher(place);
        disp.forward(request, response);

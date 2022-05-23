@@ -6,6 +6,7 @@
 package com.ehealthcare.business;
 
 import com.ehealthcare.entities.LoginDetails;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -46,6 +47,12 @@ public class LoginDetailsFacade extends AbstractFacade<LoginDetails> implements 
     @Override
     public LoginDetails findLogDetails(String username) {
         return find(username);
+    }
+    
+
+    @Override
+    public List<LoginDetails> findAllDetails() {
+       return findAll();
     }
     
 }

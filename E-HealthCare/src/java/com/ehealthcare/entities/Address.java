@@ -26,7 +26,19 @@ public class Address implements Serializable {
     private int postalCosde;
 
     public Long getId() {
+        
         return id;
+    }
+
+    public Address() {
+    }
+
+    public Address( String strtName, String Town, String provance, int postalCosde) {
+        this.id = id;
+        this.strtName = strtName;
+        this.Town = Town;
+        this.provance = provance;
+        this.postalCosde = postalCosde;
     }
 
     public void setId(Long id) {

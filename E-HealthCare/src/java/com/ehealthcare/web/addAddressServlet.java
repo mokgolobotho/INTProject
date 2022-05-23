@@ -5,7 +5,10 @@
  */
 package com.ehealthcare.web;
 
+import com.ehealthcare.business.AddressFacadeLocal;
+import com.ehealthcare.entities.Address;
 import java.io.IOException;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +22,9 @@ import javax.servlet.http.HttpSession;
  */
 public class addAddressServlet extends HttpServlet {
 
+    @EJB
+    private AddressFacadeLocal addressFacade;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,7 +35,7 @@ public class addAddressServlet extends HttpServlet {
         String province = request.getParameter("province");
         Integer postalCode = Integer.parseInt(request.getParameter("postalCode")); 
         
-        addToSession(session, streetName, town, province, postalCode);
+        addressFacade.createAddress(new Address( streetName, town, province, postalCode));
         
         RequestDispatcher dis = request.getRequestDispatcher("create_username.html");
         dis.forward(request, response);

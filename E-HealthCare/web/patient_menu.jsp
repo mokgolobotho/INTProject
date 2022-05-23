@@ -20,7 +20,7 @@
         <h1>Welcome <%=name%> </h1>
         
         <ul>
-            <li> <a href="client_profile.jsp">Profile </a> </li>  
+            <li> <a href="clientProfileServlert.do">Profile </a> </li>  
             <li> <a href="client_request.jsp">Get request </a> </li> 
             <li> <a href="previous_consultation.jsp">Previous consultations </a> </li> 
             <li> <a href="read_article.html">Read Articles </a> </li> 

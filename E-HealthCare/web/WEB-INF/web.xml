@@ -8,6 +8,14 @@
         <servlet-name>addAddressServlet</servlet-name>
         <servlet-class>com.ehealthcare.web.addAddressServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>clientProfileServlet</servlet-name>
+        <servlet-class>com.ehealthcare.web.clientProfileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>clientProfileServlert</servlet-name>
+        <servlet-class>com.ehealthcare.web.clientProfileServlert</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>credentialServlet</servlet-name>
         <url-pattern>/credentialServlet.do</url-pattern>
@@ -15,5 +23,13 @@
     <servlet-mapping>
         <servlet-name>addAddressServlet</servlet-name>
         <url-pattern>/addAddressServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>clientProfileServlet</servlet-name>
+        <url-pattern>/clientProfileServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>clientProfileServlert</servlet-name>
+        <url-pattern>/clientProfileServlert.do</url-pattern>
     </servlet-mapping>
 </web-app>

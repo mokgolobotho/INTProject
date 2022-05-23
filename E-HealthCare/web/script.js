@@ -24,11 +24,14 @@ function checkPassword()
     var pass1 = document.getElementById("pass").value;
     var pass2 = document.getElementById("re_pass").value;
    
-    if ( pass1===pass2) {
+    if ( pass1 ===  pass2)
+    {
+       document.getElementById("message").innerHTML = "";
        
     }else {
-        alert ("Passwords don't match!");
-      
+        
+        document.getElementById("message").innerHTML = "Passwords are not the same";
+        
     }
     
 }

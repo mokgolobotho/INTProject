@@ -13,7 +13,7 @@ and open the template in the editor.
     </head>
     <body>
         <h3>CREATE USERNAME</h3>
-        <form action="credentialServlet.do" method="POST" onSubmit=" checkPassword();">
+        <form action="credentialServlet.do" method="POST" >
             <table>
               
                 <tr>
@@ -25,14 +25,26 @@ and open the template in the editor.
                 <tr>
                     <td>Create Password: </td>
                     <td>
-                        <input type="text" name="password" id="pass" required="">
+                        <input type="password" name="password" id="pass" required="" >
                     </td> 
                 </tr>
                 <tr>
                     <td>Confirm Password: </td>
                     <td>
-                        <input type="text" name="re-password" id="re_pass" required="">
+                        <input type="password" name="re-password" id="re_pass" required="" onchange="checkPassword();">
                     </td> 
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span  id="message" style="color:red" ></span> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Not a robot:</td>
+                    <td>
+                        <input  name="check" type="checkbox" >
+                    </td>
                 </tr>
                 <tr>
                     <td></td>

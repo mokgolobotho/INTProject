@@ -11,9 +11,7 @@ import com.ehealthcare.business.DoctorFacadeLocal;
 import com.ehealthcare.business.PersonaldetailsFacadeLocal;
 import com.ehealthcare.entities.Client;
 import com.ehealthcare.entities.Doctor;
-import static com.ehealthcare.entities.Doctor_.*;
 import com.ehealthcare.entities.Personaldetails;
-import static com.ehealthcare.entities.Personaldetails_.*;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -23,7 +21,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.ehealthcare.entities.*;
 
 /**
  *
@@ -59,14 +56,18 @@ public class RegistrationServlet extends HttpServlet {
         String licNum = request.getParameter("licNum");
         String specialization = request.getParameter("specialization");
         
-        String which = "";
+        
+        session.setAttribute("name", name);
+        session.setAttribute("id", id);
         if(specialization == null){
-            which = "client";
-            addToSession(session, id, name, surname, email, gender, ethnicity, dob, which);
+             //save client
+            System.out.println("There was a pro"+ specialization);
+            doctorFacade.createDoctor(new Doctor(id, name, surname, email, dob, gender, ethnicity, licNum, specialization));
+          
+         
         }else{
-           //save client
-            which = "doc";
-            addToSessionDoc(session, id, name, surname, email, gender, ethnicity, dob, licNum, specialization, which);
+          
+         clientFacade.createClient(new Client(id, name, surname, email, dob, gender, ethnicity));
        }
 
         RequestDispatcher dis = request.getRequestDispatcher("add_address.html");

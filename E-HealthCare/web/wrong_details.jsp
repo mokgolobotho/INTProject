@@ -9,9 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>User not found Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Sorry You are not in our database please register.</h1>
+        <p>
+            Click <a href="index.html">here</a> to go back to the login page.
+            </p>
     </body>
 </html>
